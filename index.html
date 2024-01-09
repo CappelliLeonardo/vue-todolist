@@ -11,28 +11,26 @@
     <body>
         
         <div id="app">
-            <div>
-                    <input type="text" v-model="newTodo" placeholder="Cosa vuoi fare?">
+                <h1>TODOBOOLIST</h1>
+                <div id="user-sec">
+                        <input type="text" v-model="newTodo" placeholder="Cosa vuoi fare?">
+                        <button @click="addTodo()">Aggiungi in lista</button>
+                </div>
 
-                    <button @click="addTodo()">
-                            Aggiungi in lista
-                    </button>
-            </div>
-
-            <div>
-                    <ul v-if="todos.length > 0">
-                            <li v-for="(elementoToDo, indiceDelTodo) in todos" :class="elementoToDo.done == true ? 'complete' : '' ">
+                <div>
+                        <ul v-if="todos.length > 0">
+                                <li v-for="(elementoToDo, indiceDelTodo) in todos" :class="elementoToDo.done == true ? 'complete' : '' ">
                                     {{elementoToDo.text}}
 
                                     <button @click="removeTodo(indiceDelTodo)">
                                         X
                                     </button>
-                            </li>
-                    </ul>
-                    <p v-else>
-                            Non ci sono task
-                    </p>
-            </div>
+                                </li>
+                        </ul>
+                        <p v-else>
+                                Non ci sono task
+                        </p>
+                </div>
         </div>
         
         <!-- Importazione Vue -->
