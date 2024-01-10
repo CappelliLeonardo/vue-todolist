@@ -48,7 +48,6 @@ createApp ({
 
                 this.todos.push(obj);
                 this.newTodo = '';
-
             }
         },
         removeTodo(i) {
